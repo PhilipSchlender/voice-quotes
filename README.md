@@ -49,12 +49,14 @@ Voice-Quotes is a plugin written for [SourceMod](https://www.sourcemod.net/). It
             "player" "medic"
             "quote" "excellent"
             "filename" "medic_cheers01.wav"
+            "duration" "1"
         }
         "0"
         {
             "player" "engineer"
             "quote" "yee-haw"
             "filename" "engineer_battlecry07.wav"
+            "duration" "2"
         }
     }
     ```

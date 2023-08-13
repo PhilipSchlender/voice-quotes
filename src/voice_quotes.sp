@@ -130,6 +130,8 @@ public void LoadVoiceQuotes()
             ThrowError("Failed to get key \"filename\" of subsection in file \"%s\".", file);
         }
 
+        int duration = config.GetNum("duration");
+
         if (StrEqual(player, "")) {
             ThrowError("Invalid value for key \"player\" in subsection in file \"%s\".", file);
         }
@@ -142,7 +144,11 @@ public void LoadVoiceQuotes()
             ThrowError("Invalid value for key \"filename\" in subsection in file \"%s\".", file);
         }
 
-        VoiceQuote voiceQuote = new VoiceQuote(player, quote, filename);
+        if (duration <= 0) {
+            ThrowError("Invalid value for key \"duration\" in subsection in file \"%s\".", file);
+        }
+
+        VoiceQuote voiceQuote = new VoiceQuote(player, quote, filename, duration);
 
         voiceQuotes.Push(voiceQuote);
 
@@ -458,9 +464,10 @@ methodmap VoiceQuote < StringMap
      * @param player Name of the player who said the quote.
      * @param quote Quote text.
      * @param filename Name of the sound file of the quote.
+     * @param duration Duration of the sound in seconds.
      * @error
      */
-    public VoiceQuote(const char[] player, const char[] quote, const char[] filename)
+    public VoiceQuote(const char[] player, const char[] quote, const char[] filename, int duration)
     {
         StringMap stringMap = new StringMap();
 
@@ -474,6 +481,10 @@ methodmap VoiceQuote < StringMap
 
         if (! stringMap.SetString("filename", filename)) {
             ThrowError("Failed to set filename \"%d\".", filename);
+        }
+
+        if (! stringMap.SetValue("duration", duration)) {
+            ThrowError("Failed to set duration \"%d\".", duration);
         }
 
         return view_as<VoiceQuote>(stringMap);
@@ -510,6 +521,19 @@ methodmap VoiceQuote < StringMap
     public void GetFilename(char[] filename, int maximumLength)
     {
         this.GetString("filename", filename, maximumLength);
+    }
+
+    /**
+     * Retrieves the duration of the sound.
+     *
+     * @return Duration in seconds.
+     */
+    public int GetDuration()
+    {
+        int duration;
+        this.GetValue("duration", duration);
+
+        return duration;
     }
 
     /**
