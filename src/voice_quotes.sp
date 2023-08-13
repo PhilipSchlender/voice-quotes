@@ -472,15 +472,15 @@ methodmap VoiceQuote < StringMap
         StringMap stringMap = new StringMap();
 
         if (! stringMap.SetString("player", player)) {
-            ThrowError("Failed to set player \"%d\".", player);
+            ThrowError("Failed to set player \"%s\".", player);
         }
 
         if (! stringMap.SetString("quote", quote)) {
-            ThrowError("Failed to set quote \"%d\".", quote);
+            ThrowError("Failed to set quote \"%s\".", quote);
         }
 
         if (! stringMap.SetString("filename", filename)) {
-            ThrowError("Failed to set filename \"%d\".", filename);
+            ThrowError("Failed to set filename \"%s\".", filename);
         }
 
         if (! stringMap.SetValue("duration", duration)) {
