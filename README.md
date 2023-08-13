@@ -61,7 +61,7 @@ Voice-Quotes is a plugin written for [SourceMod](https://www.sourcemod.net/). It
     }
     ```
 
-    Each voice quote is defined by the name of the player who said the quote, the quote text and the name of the sound file of the quote.
+    Each voice quote is defined by the name of the player who said the quote, the quote text, the name of the sound file of the quote and the duration of the sound in seconds.
 
     For testing purposes you can use the generic voice commands of the different classes of Team Fortress 2, see [Team Fortress 2 Official Wiki](https://wiki.teamfortress.com/wiki/Category:Voice_command_audio).
 
