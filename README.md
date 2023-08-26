@@ -8,7 +8,7 @@ Voice-Quotes is a plugin written for [SourceMod](https://www.sourcemod.net/). It
 
 1. Open the chat.
 
-2. Enter either ```!voice_quote``` or ```!vq``` followed by a search query, e.g. ```!vq yee-haw```. If there is a voice quote, which player or quote text machtes the query, the corresponding sound file is played to all players. There is a configurable cooldown on the use of the voice quotes to prevent spamming of quotes.
+2. Enter either ```!voice_quote``` or ```!vq``` followed by a search query, e.g. ```!vq yee-haw```. If there is a voice quote, which player or quote text machtes the query, the corresponding sound file is played to all players. There are configurable cooldowns on the use of the voice quotes to prevent spamming of quotes.
 
 ## Requirements
 
@@ -69,10 +69,11 @@ Voice-Quotes is a plugin written for [SourceMod](https://www.sourcemod.net/). It
 
 ### Available console variables to control the behaviour of the plugin
 
-| Name                  | Default value | Description |
-| :-------------------- | :------------ | :---------- |
-| voice_quotes_enabled  | 1             | Sets whether voice quotes are enabled. |
-| voice_quotes_cooldown | 3             | Sets the cooldown in seconds for using voice quotes. |
+| Name                         | Default value | Description |
+| :--------------------------- | :------------ | :---------- |
+| voice_quotes_enabled         | 1             | Sets whether voice quotes are enabled. |
+| voice_quotes_server_cooldown | 5             | Sets the server cooldown in seconds after which voice quotes can be used. |
+| voice_quotes_client_cooldown | 5             | Sets the cooldown in seconds after which a client can use voice quotes. |
 
 ### Optional: Adjust the pure server whitelist configuration
 
