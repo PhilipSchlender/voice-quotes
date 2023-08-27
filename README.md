@@ -8,7 +8,7 @@ Voice-Quotes is a plugin written for [SourceMod](https://www.sourcemod.net/). It
 
 1. Open the chat.
 
-2. Enter either ```!voice_quote``` or ```!vq``` followed by a search query, e.g. ```!vq yee-haw```. If there is a voice quote, which player or quote text machtes the query, the corresponding sound file is played to all players. There is a configurable cooldown on the use of the voice quotes to prevent spamming of quotes.
+2. Enter either ```!voice_quote``` or ```!vq``` followed by a search query, e.g. ```!vq yee-haw```. If there is a voice quote, which player or quote text machtes the query, the corresponding sound file is played to all players. There are configurable cooldowns on the use of the voice quotes to prevent spamming of quotes.
 
 ## Requirements
 
@@ -49,17 +49,19 @@ Voice-Quotes is a plugin written for [SourceMod](https://www.sourcemod.net/). It
             "player" "medic"
             "quote" "excellent"
             "filename" "medic_cheers01.wav"
+            "duration" "1"
         }
         "0"
         {
             "player" "engineer"
             "quote" "yee-haw"
             "filename" "engineer_battlecry07.wav"
+            "duration" "2"
         }
     }
     ```
 
-    Each voice quote is defined by the name of the player who said the quote, the quote text and the name of the sound file of the quote.
+    Each voice quote is defined by the name of the player who said the quote, the quote text, the name of the sound file of the quote and the duration of the sound in seconds.
 
     For testing purposes you can use the generic voice commands of the different classes of Team Fortress 2, see [Team Fortress 2 Official Wiki](https://wiki.teamfortress.com/wiki/Category:Voice_command_audio).
 
@@ -67,10 +69,11 @@ Voice-Quotes is a plugin written for [SourceMod](https://www.sourcemod.net/). It
 
 ### Available console variables to control the behaviour of the plugin
 
-| Name                  | Default value | Description |
-| :-------------------- | :------------ | :---------- |
-| voice_quotes_enabled  | 1             | Sets whether voice quotes are enabled. |
-| voice_quotes_cooldown | 3             | Sets the cooldown in seconds for using voice quotes. |
+| Name                         | Default value | Description |
+| :--------------------------- | :------------ | :---------- |
+| voice_quotes_enabled         | 1             | Sets whether voice quotes are enabled. |
+| voice_quotes_server_cooldown | 5             | Sets the server cooldown in seconds after which voice quotes can be used. |
+| voice_quotes_client_cooldown | 5             | Sets the cooldown in seconds after which a client can use voice quotes. |
 
 ### Optional: Adjust the pure server whitelist configuration
 
